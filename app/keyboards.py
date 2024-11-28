@@ -1,54 +1,33 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 intro_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-            [
-                InlineKeyboardButton(text='Записаться на занятие', callback_data='book'),
-                InlineKeyboardButton(text='Прайс лист', callback_data='price_list')
-            ]
-        ]
-)
-
-add_goal_kb = InlineKeyboardMarkup(
-    inline_keyboard=[
-            [
-                InlineKeyboardButton(text='Отменить', callback_data='cancel'),
-                InlineKeyboardButton(text='Назад', callback_data='back'),
-            ]
-        ]
-)
-
-reset_goal_kb = InlineKeyboardMarkup(
-    inline_keyboard=[
-            [
-                InlineKeyboardButton(text='Готово!✅ С вами свяжется наш менеджер, хорошего дня!', callback_data='price_list'),
-            ]
-        ]
-)
-price_kb = InlineKeyboardMarkup(
-    inline_keyboard=[
-                [InlineKeyboardButton(text='Разовое занятие  - 800₽', callback_data='tarif_1')],
-                [InlineKeyboardButton(text='Первое пробное  - 600₽', callback_data='tarif_2')],
-                [InlineKeyboardButton(text='Абонементы', callback_data='abonements')],
                 [InlineKeyboardButton(text='Записаться на занятие', callback_data='book')],
-                [InlineKeyboardButton(text='Назад', callback_data='back_to_main')],
+                [InlineKeyboardButton(text='Педагоги', callback_data='masters')],
+                [InlineKeyboardButton(text='Цены', callback_data='price')],
+                [InlineKeyboardButton(text='Аренда зала', callback_data='rent')],
+                [InlineKeyboardButton(text='Помощь', callback_data='help')],
+
     ]
 )
-sub_price_kb = InlineKeyboardMarkup(
+back_to_main_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='4 занятия - 2700₽', callback_data='tarif_abon1'),],
-        [InlineKeyboardButton(text='8 занятий - 5000₽', callback_data='tarif_abon2'),],
-        [InlineKeyboardButton(text='12 занятий - 6900₽', callback_data='tarif_abon3')],
-        [InlineKeyboardButton(text='Записаться на занятие', callback_data='book')],
-        [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
+                [InlineKeyboardButton(text='Назад на главную', callback_data='back_to_main')],
     ]
 )
-select_tarif_kb = InlineKeyboardMarkup(
+after_tarif_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='Разовое занятие  - 800₽', callback_data='tarif_1'),],
-        [InlineKeyboardButton(text='Первое пробное  - 600₽', callback_data='tarif_1'),],
-        [InlineKeyboardButton(text='Абонементы', callback_data='abonements')],
-        [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
+                [InlineKeyboardButton(text='Готово! С вами свяжутся, чтобы подтвердить запись', callback_data='back_to_main'),
+                InlineKeyboardButton(text='', callback_data='null')],
+    ]
+)
+tarif_selection_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+                [InlineKeyboardButton(text='Назад на главную', callback_data='back_to_main')],
+                [InlineKeyboardButton(text='Разовое занятие - 800₽', callback_data='tarif_one_time')],
+                [InlineKeyboardButton(text='Первое пробное - 600₽', callback_data='tarif_first_try')],
+                [InlineKeyboardButton(text='4 занятия - 2700₽', callback_data='tarif_4trains')],
+                [InlineKeyboardButton(text='8 занятий - 5000₽', callback_data='tarif_8trains')],
+                [InlineKeyboardButton(text='12 занятий - 6900₽', callback_data='tarif_12trains')],
     ]
 )
